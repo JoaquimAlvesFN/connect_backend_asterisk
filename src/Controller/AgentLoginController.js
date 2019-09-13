@@ -1,4 +1,7 @@
-const ami = require('asterisk-manager')('5038','192.168.0.150','adminJ','@@hh1983', true);
+require('dotenv/config');
+
+const {IP, AMI_PORT, AMI_USER, AMI_PASS} = process.env;
+const ami = require('asterisk-manager')(AMI_PORT, IP, AMI_USER, AMI_PASS, true);
 
 module.exports = {
     async login(req, res){

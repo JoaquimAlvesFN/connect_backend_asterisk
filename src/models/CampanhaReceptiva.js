@@ -1,4 +1,4 @@
-/*const { DataTypes } = require('sequelize');
+const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
 const Scripts = require('./Script');
@@ -27,12 +27,8 @@ const CampanhaReceptiva = sequelize.define('CampanhaReceptiva', {
         },
         allowNull: false,
     },
-}, { 
-    sequelize: sequelize, 
-    modelName: 'CampanhaReceptiva' 
-});
+}, { engine: 'MYISAM', sequelize, modelName: 'CampanhaReceptiva' });
 
-sequelize.sync();
+//sequelize.sync();
 
 module.exports = CampanhaReceptiva;
-*/
